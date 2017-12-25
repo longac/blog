@@ -1,1 +1,1 @@
-leetcode by c++
+leetcode by C++
