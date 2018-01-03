@@ -219,20 +219,26 @@ class LRUCache
 
 int main()
 {
-    LRUCache c(2);
-    c.set(2,1);
-    c.print();
-    c.set(2,2);
-    c.print();
-    c.get(2);
-    c.print();
-    c.set(1,1);
-    c.print();
-    c.set(4,1);
-    c.print();
-    c.get(2);
-    c.print();
-    cout << "---------" << endl;
+    srand(time(0));
+    int capacity        = 5;
+    int test_loop_times = 10;
+
+    LRUCache cache(capacity);
+
+    int v; 
+    for(int i = 0; i < test_loop_times; i++) 
+    {
+        v = i;//rand() % capacity;
+        cout << "set " << v << ": ";
+        cache.set(v, v);
+        cache.print();
+
+        v = rand() % capacity;
+        cout << "get " << v << ": " << cache.get(v);
+        cache.print();
+
+        cout << endl;
+    }
 
     return 0;
 }
